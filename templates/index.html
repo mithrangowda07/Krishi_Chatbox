@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishi Chatbox</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Krishi Chatbox</h1>
+      <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">🌙</button>
+    </header>
+
+    <main class="container">
+      <section class="chat-panel">
+        <div id="messages" class="messages" aria-live="polite"></div>
+
+        <div id="typing" class="typing hidden">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="typing-text">Bot is typing...</span>
+        </div>
+
+        <div class="controls">
+          <div class="lang-select">
+            <label for="lang">Input language</label>
+            <select id="lang">
+              <option value="en" selected>English</option>
+              <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            </select>
+          </div>
+          <div class="lang-select">
+            <label for="respLang">Response language</label>
+            <div class="resp-row">
+              <select id="respLang">
+                <option value="auto" selected>Auto</option>
+                <option value="en">English</option>
+                <option value="kn">ಕನ್ನಡ (Kannada)</option>
+              </select>
+              <button id="translateBtn" class="secondary" title="Translate last bot reply">🔁</button>
+            </div>
+          </div>
+          <div class="input-group">
+            <input id="userInput" type="text" placeholder="Type your question..." />
+            <button id="micBtn" title="Speak"><span class="icon">🎙️</span></button>
+            <div id="recIndicator" class="rec-indicator hidden" aria-hidden="true" title="Listening">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <button id="sendBtn" title="Send"><span class="icon">➤</span></button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="clearBtn" class="secondary">Clear chat</button>
+        </div>
+      </section>
+
+      <section class="help-text">
+        <p>
+          Ask about crops, soil, irrigation, pests, fertilizers, or weather updates.
+        </p>
+      </section>
+    </main>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+  </html>
+
+
